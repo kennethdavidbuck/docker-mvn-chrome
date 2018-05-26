@@ -15,10 +15,10 @@ jobs:
       - run:
           name: Build and Push Image
           command: |
-            docker build -t rigosolutions/mvn-chrome .
-            docker tag rigosolutions/mvn-chrome:latest rigosolutions/mvn-chrome:${CIRCLE_SHA1}
+            docker build -t kdbuck/mvn-chrome .
+            docker tag kdbuck/mvn-chrome:latest kdbuck/mvn-chrome:${CIRCLE_SHA1}
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push rigosolutions/mvn-chrome:latest
+            docker push kdbuck/mvn-chrome:latest
             docker logout
 
   release:
@@ -30,9 +30,9 @@ jobs:
       - run:
           name: Build and Release Image
           command: |
-            docker build -t rigosolutions/mvn-chrome:${CIRCLE_TAG} .
+            docker build -t kdbuck/mvn-chrome:${CIRCLE_TAG} .
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push rigosolutions/mvn-chrome:${CIRCLE_TAG}
+            docker push kdbuck/mvn-chrome:${CIRCLE_TAG}
             docker logout
 
 workflows:
