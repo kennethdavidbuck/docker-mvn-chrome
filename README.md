@@ -2,7 +2,7 @@
 
 Includes:
 
-* JDK 10
-* Maven 3.5.3
+* JDK 11
+* Maven 3.6.0
 * Chrome (latest)
 * ChromeDriver 2.38
